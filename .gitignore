@@ -1,0 +1,11 @@
+# Plug-in install path
+/.terraform
+
+# terraform state files
+terraform.tfstate*
+
+# terraform value files
+*.tfvars
+
+# credential file
+account.json
