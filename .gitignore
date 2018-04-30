@@ -6,6 +6,7 @@ terraform.tfstate*
 
 # terraform value files
 *.tfvars
+!sample.tfvars
 
 # credential file
 account.json
