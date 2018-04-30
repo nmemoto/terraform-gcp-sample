@@ -29,7 +29,7 @@ resource "google_compute_instance" "default" {
     foo = "bar"
   }
 
-  metadata_startup_script = "echo hi > /test.txt"
+  metadata_startup_script = "sudo yum install -y postgresql wget; wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O cloud_sql_proxy; chmod +x cloud_sql_proxy; /cloud_sql_proxy -instances=${lookup(var.provider, "project")}:${lookup(var.provider, "region")}:${lookup(var.google_sql_database_instance, "name")}=tcp:5432"
 
   service_account {
     scopes = "${var.service_account_scope}"

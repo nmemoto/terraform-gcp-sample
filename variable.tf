@@ -19,3 +19,19 @@ variable "service_account_scope" {
         "cloud-platform"
     ]
 }
+
+variable "google_sql_database_instance" {
+    type = "map"
+    default = {
+        region = "asia-northeast1"
+        database_version = "POSTGRES_9_6"
+        tier = "db-f1-micro"
+        disk_size = "10"
+        disk_type = "PD_SSD"
+        zone = "asia-northeast1-a"
+    }
+}
+
+variable "google_sql_user" {
+    type = "map"
+}
